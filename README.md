@@ -45,33 +45,6 @@ The server will run at `http://127.0.0.1:5000`
 | GET | `/inventory/search/barcode/<barcode>` | look up a product on OpenFoodFacts |
 | GET | `/inventory/search/name/<name>` | search OpenFoodFacts by name |
 
-### Some example curl commands
-
-```bash
-# get everything
-curl http://127.0.0.1:5000/inventory
-
-# get item with id 1
-curl http://127.0.0.1:5000/inventory/1
-
-# add a new item
-curl -X POST http://127.0.0.1:5000/inventory \
-  -H "Content-Type: application/json" \
-  -d '{"product_name": "Orange Juice", "brands": "Tropicana", "price": 3.99, "stock_quantity": 20}'
-
-# update the price and stock of item 1
-curl -X PATCH http://127.0.0.1:5000/inventory/1 \
-  -H "Content-Type: application/json" \
-  -d '{"price": 5.49, "stock_quantity": 100}'
-
-# delete item 2
-curl -X DELETE http://127.0.0.1:5000/inventory/2
-
-# search by barcode
-curl http://127.0.0.1:5000/inventory/search/barcode/0041570056530
-```
-
----
 
 ## Using the CLI
 
